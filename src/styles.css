@@ -125,11 +125,10 @@ h3, h4 {
 body {
   background-color: #cee3d1;
 }
-/* 
-input[type="date"]
-{ 
+
+input[type="date"] { 
 font-size: 35px;
-font-family locale: 'Fresca', sans-serif;
+font-family: locale 'Fresca', sans-serif;
 color: rgba(13, 143, 24, 0.712);
-} */
+}
 

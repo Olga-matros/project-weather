@@ -35,7 +35,7 @@ h1 {
   text-align: center;
   color: rgb(93, 93, 180);
   font-weight: bolder;
-  color: rgb(236, 11, 11);
+  color: #df630abc;
 }
 
 h2 {
@@ -110,6 +110,11 @@ height: 55px;
   margin: 10 20 20 0;
 }
 
+#picture {
+  width: 20px;
+  height: auto;
+}
+
 #dates {
   font-size: 20px;
   font-family: 'Fresca', sans-serif;
@@ -121,12 +126,12 @@ p1, p2 {
 
 
 .sun {
-  color: rgb(236, 11, 11);
+  color: #df630abc;
   font-size: 40px;
 }
 
 #temperature {
-  color: rgb(236, 11, 11);
+  color: #df630abc;
   font-size: 60px;
   font-weight: bold;
 }

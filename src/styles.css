@@ -39,6 +39,7 @@ h1 {
 
 h2 {
   font-family: 'Fresca', sans-serif;
+  text-transform: capitalize;
   text-align: center;
   color: rgb(93, 93, 180);
   font-weight: bolder;
@@ -111,9 +112,15 @@ p1, p2 {
 }
 
 
-.body-temperature, .body-temperature1 {
+.sun {
   color: rgb(236, 11, 11);
   font-size: 40px;
+}
+
+#temperature {
+  color: rgb(236, 11, 11);
+  font-size: 60px;
+  font-weight: bold;
 }
 
 h3, h4 {

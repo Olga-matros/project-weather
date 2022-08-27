@@ -26,26 +26,26 @@
 
   <body>
                 <div class="row">
-                  <div class="col">
+                  <div class="col-7">
                       <form id="search-form">
                           <div class="mb-3">
                             <input type="text" class="form-control" id="search-text-input" placeholder="Enter a city here" autofocus="on" autocomplete="off">
                           </div>
-                          <button type="submit" class="btn btn-primary search-button" id="search-button">Submit</button>
+                          <button type="submit" class="btn btn-primary search-button" value="Search" id="search-button">Submit</button>
                           
                           <button type="submit" class="btn btn-primary search-button" id="current-location-button">  <i class="fa-solid fa-map-location-dot"></i></button>
                       </form>
                   </div>
                   
                   <div class="col current-weather-text">
-                      <div id="current-temp">           
-                      <span class="temperature" id="actual-temp">18</span><a id="celsius">°C</a>|<a id="farenheit">°F</a>  
+                      <div>           
+                      <span class="temperature" id="temperature"></span><a id="celsius"> °C</a>|<a id="farenheit-link">°F</a>  
                       </div>
-                      <div id="humidity">
-                      Humidity: <span id="humidity-number">0</span>%
+                      <div>
+                      Humidity: <span id="humidity"></span> %
                       </div>
-                      <div id="wind">
-                      Wind: <span id="wind-speed"> 20 </span> m/s
+                      <div>
+                      Wind: <span id="wind"></span> m/s
                       </div>
                   </div>
               </div>
@@ -54,16 +54,17 @@
                     <div class="col">
 
                       
-                      <h1 id="city">Kyiv</h1>
+                      <h1 id="city"></h1>
+                      <h2 id="description"></h2>
    
     <div class="date">
       <form>
-        Choose the date
+        Calendar
         <input type="date" id="dates" />
       </form>
     </div>
 
-    <h2></h2>
+   
     <br /><br />
 
     <div class="card">
@@ -72,15 +73,12 @@
           <div class="col">
 
               <div class="float-left">
-            <h3>Day temperature <span class="temperature"></a></span>
+            <h3>Sunrise <span class="temperature"></span>
             </div>
             <div class="col">
                 
-                <p class="body-temperature" id="day-temp">17</p>
-                <span id="unit_tempearature">
-                    <a href="#" id="celsius-link">°C</a> |
-                    <a href="#" id="fahrenheit-link">°F</a>
-                </span>
+                <p class="sun" id="sunrise"></p>
+               
               </div></h3>
 
             <img src="src/images/sun.png" class="card-img-top" id="sunny" />
@@ -91,15 +89,12 @@
           <div class="col">
 
               <div class="float-left">
-            <h4>Night temperature <span class="temperature"></span>
+            <h4>Sunset <span class="temperature"></span>
             </div>
             <div class="col">
                 
-                <p class="body-temperature1">17</p>
-                            <span id="unit_tempearature1">
-                                <a href="#" id="celsius1-link">°C</a> |
-                                <a href="#" id="fahrenheit1-link">°F</a>
-                            </span>
+                <p class="sun" id="sunset"></p>
+                            
               </div></h4>
             
             <img src="src/images/night.jpg" class="card-img-top" id="night" />
@@ -109,6 +104,14 @@
     </div>
 
     <br /><br />
+
+
+     <h3>7-day forecast</h3>
+      <hr />
+      <div>
+      <div class="weather-forecast" id="forecast"></div>
+      </div>
+    <p></p>
 
     <div class="container text-center">
       <div class="row">

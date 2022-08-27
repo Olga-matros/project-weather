@@ -80,19 +80,30 @@ function showTemperature(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
   iconElement.setAttribute("alt", response.data.weather[0].description); 
- 
-
 
 }
 
-let apiKey ="4625c4e0a5b77db6d4e95771e68e2bb6";
-let city = "Lisbon";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey ="4625c4e0a5b77db6d4e95771e68e2bb6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
 
 
-axios.get(apiUrl).then(showTemperature);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+  
+}
 
 
+
+search("New York");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 
 // Convert the time of sunset and sunrise

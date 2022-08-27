@@ -1,44 +1,6 @@
-// Show actual date
 
-let now = new Date();
-let h2 = document.querySelector("h2");
 
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let hours = now.getHours();
-let date = now.getDate();
-let year = now.getFullYear();
 
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[now.getDay()];
-
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec"
-];
-let month = months[now.getMonth()];
-
-h2.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}, ${year}`;
-
-// // Show position
-
-// function displayPosition(position) {
-//   let latitude = position.coords.latitude;
-//   let longitude = position.coords.longitude;
-//   let apiUrlTemp = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=5796366da8b0eaaaecd41b58c7a56fa1`;
-//   axios.get(apiUrlTemp).then(showTemperature);
 
 
 
@@ -57,7 +19,42 @@ h2.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}, ${year}`;
 // My Location Button Function
 
 
-// Show Temperature
+
+// Show actual date
+
+function formatDate(timestamp) {
+  let dateToFormat = new Date(timestamp);
+
+  let minutes = dateToFormat.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let hours = dateToFormat.getHours();
+  let date = dateToFormat.getDate();
+  let year = dateToFormat.getFullYear();
+
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let day = days[dateToFormat.getDay()];
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  let month = months[dateToFormat.getMonth()];
+  return `${day}, ${month} ${date}, ${year}, ${hours}:${minutes}`
+}
+
+// Show temperature
 
 function showTemperature(response) {
 
@@ -71,6 +68,7 @@ function showTemperature(response) {
   let windElement = document.querySelector("#wind");
   let sunriseElement = document.querySelector("#sunrise");
   let sunsetElement = document.querySelector("#sunset");
+  let dateElement = document.querySelector("#date");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -78,13 +76,14 @@ function showTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   sunriseElement.innerHTML = convertUnixToFormattedDate(response.data.sys.sunrise);
   sunsetElement.innerHTML = convertUnixToFormattedDate(response.data.sys.sunset);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
  
 
 
 }
 
 let apiKey ="4625c4e0a5b77db6d4e95771e68e2bb6";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=kyiv&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=${apiKey}&units=metric`;
 
 
 axios.get(apiUrl).then(showTemperature);
@@ -92,16 +91,14 @@ axios.get(apiUrl).then(showTemperature);
 
 
 
-
+// Convert the time of sunset and sunrise
 
 function convertUnixToFormattedDate(unix_timestamp) {
-  
   var date = new Date(unix_timestamp * 1000);
   var hours = date.getHours();
-  
-if (hours < 10) {
-  hours = `0${hours}`;
-}
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
   var minutes = "0" + date.getMinutes();
   var seconds = "0" + date.getSeconds();
   var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);

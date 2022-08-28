@@ -152,3 +152,15 @@ font-family: locale 'Fresca', sans-serif;
 color: rgba(13, 143, 24, 0.712);
 }
 
+.active{
+  text-decoration: none;
+  color:  rgb(93, 93, 180);
+cursor: default;
+}
+
+.active:hover{
+text-decoration: none;
+color:  rgb(93, 93, 180);
+}
+
+

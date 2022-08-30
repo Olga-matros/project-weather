@@ -33,7 +33,7 @@
                           </div>
                           <button type="submit" class="btn btn-primary search-button w-40" value="Search" id="search-button">Submit</button>
                           
-                          <button type="submit" class="btn btn-primary search-button w-30" id="current-location-button">  <i class="fa-solid fa-map-location-dot"></i></button>
+                          <!-- <button type="submit" class="btn btn-primary search-button w-30" id="current-location-button">  <i class="fa-solid fa-map-location-dot"></i></button> -->
                       </form>
                   </div>
                   
@@ -110,68 +110,29 @@
     <br /><br />
 
 
-     <h3>7-day forecast</h3>
+     <h3>Week forecast</h3>
       <hr />
       <div>
-      <div class="weather-forecast" id="forecast"></div>
+      <div class="Week-forecast" id="2_Forecast4you"></div>
       </div>
     <p></p>
 
-    <div class="container text-center">
+    <div class="weather-forecast" id="forecast">
       <div class="row">
-        <div class="col">
-          <img src="src/images/sun.png" class="card-img-top" />
-
-          <br />
-          Mon
-          <br />
-          <span class="badge text-bg-secondary">+26 °C</span>
-        </div>
-        <div class="col">
-          <img src="src/images/sun.png" class="card-img-top" />
-          <br />
-          Tue
-          <br />
-          <span class="badge text-bg-success">+24 °C</span>
-        </div>
-        <div class="col">
-          <img src="src/images/sun.png" class="card-img-top" />
-          <br />
-          Wed
-          <br />
-          <span class="badge text-bg-primary">+23 °C</span>
-        </div>
-        <div class="col">
-          <img src="src/images/cloudrain.png" class="card-img-top" />
-          <br />
-          Thu
-          <br />
-          <span class="badge text-bg-secondary">+23 °C</span>
-        </div>
-        <div class="col">
-          <img src="src/images/sun.png" class="card-img-top" />
-          <br />
-          Fri
-          <br />
-          <span class="badge text-bg-danger">+24 °C</span>
-        </div>
-        <div class="col">
-          <span class="cloud">
-            <img src="src/images/sun.png" class="card-img-top" />
-          </span>
-          <br />
-          Sat
-          <br />
-          <span class="badge text-bg-success">+20 °C</span>
-        </div>
-        <div class="col">
-          <img src="src/images/cloud.png" class="card-img-top" />
-          <br />
-          Sun
-          <br />
-          <span class="badge text-bg-danger">+22 °C</span>
+        <div class="col-2">
+          <div class="weather-forecast-date">Mon</div>
+          <img src="http://openweathermap.org/img/wn/10d@2x.png"
+          alt=""
+          width="60"
+          />
+          <div class="weather-forecast-temperatures">
+          <span class="badge text-bg-danger weather-forecast-temperature max">+18°C</span>  
+          <span class="badge text-bg-primary weather-forecast-temperature min">+12°C</span>
         </div>
       </div>
+    </div>
+  </div>
+      
       <div class="ending">
         <a href="https://github.com/Olga-matros/project-weather">Open-source code</a>, by Olha Novytska
       <div>Hosted with <a href="https://clever-biscotti-d843c4.netlify.app">Netlify</a></div>

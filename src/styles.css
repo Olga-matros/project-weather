@@ -12,7 +12,7 @@ in.label {
   transition: all 200ms ease-in-out;
 }
 
-.current-location-button {
+/* .current-location-button {
   background: #33484d;
   color: white;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@ in.label {
   color: #33484d;
   cursor: pointer;
   background: white;
-}
+} */
 
 h1 {
   font-size: 40px;
@@ -152,15 +152,29 @@ font-family: locale 'Fresca', sans-serif;
 color: rgba(13, 143, 24, 0.712);
 }
 
-.active{
+.active {
   text-decoration: none;
   color:  rgb(93, 93, 180);
 cursor: default;
 }
 
-.active:hover{
+.active:hover {
 text-decoration: none;
 color:  rgb(93, 93, 180);
 }
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
+}
+
 
 

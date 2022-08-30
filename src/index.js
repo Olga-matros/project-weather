@@ -1,25 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// My Location Button Function
-
-
-
 // Show actual date
 
 function formatDate(timestamp) {
@@ -53,6 +33,38 @@ function formatDate(timestamp) {
   let month = months[dateToFormat.getMonth()];
   return `${day}, ${month} ${date}, ${year}, ${hours}:${minutes}`
 }
+
+// forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+let forecastHTML =`<div class="row">`;
+let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
+days.forEach(function(day) {
+  forecastHTML =  forecastHTML + `
+
+        <div class="col-2">
+          <div class="weather-forecast-date">${day}</div>
+          <img src="http://openweathermap.org/img/wn/10d@2x.png"
+          alt=""
+          width="60"
+          />
+          <div class="weather-forecast-temperatures">
+          <span class="badge text-bg-danger weather-forecast-temperature max">+18°C</span>  
+          <span class="badge text-bg-primary weather-forecast-temperature min">+12°C</span>
+        </div>
+      </div>
+    `;
+})
+
+   
+forecastHTML = forecastHTML + `</div>`
+forecastElement.innerHTML = forecastHTML;
+console.log(forecastHTML);
+}
+
+
+
 
 // Show temperature
 
@@ -98,7 +110,6 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
-  
 }
 
 function displayFahrenheitTemperature(event) {
@@ -130,6 +141,8 @@ let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
 
 search("Kyiv");
+
+displayForecast();
 
 // Convert the time of sunset and sunrise
 

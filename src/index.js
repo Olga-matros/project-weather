@@ -1,5 +1,3 @@
-
-
 // Show actual date
 
 function formatDate(timestamp) {
@@ -9,6 +7,7 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+
   let hours = dateToFormat.getHours();
   let date = dateToFormat.getDate();
   let year = dateToFormat.getFullYear();
@@ -30,33 +29,48 @@ function formatDate(timestamp) {
     "November",
     "December"
   ];
+
   let month = months[dateToFormat.getMonth()];
   return `${day}, ${month} ${date}, ${year}, ${hours}:${minutes}`
 }
 
-// forecast
+// Forecast
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  day = date.getDay();
+  
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 let forecastHTML =`<div class="row">`;
-let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
-days.forEach(function(day) {
+
+forecast.forEach(function(forecastDay, index) {
+  if (index < 7) {
+
+  
   forecastHTML =  forecastHTML + `
 
-        <div class="col-2">
-          <div class="weather-forecast-date">${day}</div>
-          <img src="http://openweathermap.org/img/wn/10d@2x.png"
+        <div class="col">
+          <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+         
+          <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
           alt=""
           width="60"
           />
           <div class="weather-forecast-temperatures">
-          <span class="badge text-bg-danger weather-forecast-temperature max">+18°C</span>  
-          <span class="badge text-bg-primary weather-forecast-temperature min">+12°C</span>
+          <span class="badge text-bg-danger weather-forecast-temperature max">${Math.round(forecastDay.temp.max)}°C</span>  
+          <span class="badge text-bg-primary weather-forecast-temperature min">${Math.round(forecastDay.temp.min)}°C</span>
         </div>
       </div>
     `;
-})
+}
+});
 
    
 forecastHTML = forecastHTML + `</div>`
@@ -168,7 +182,4 @@ function convertUnixToFormattedDate(unix_timestamp) {
   var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
   return formattedTime
 }
-
-
-
 

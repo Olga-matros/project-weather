@@ -118,6 +118,7 @@ height: 55px;
 #dates {
   font-size: 20px;
   font-family: 'Fresca', sans-serif;
+  font-style: italic;
 }
 
 p1, p2 {
@@ -174,6 +175,17 @@ color:  rgb(93, 93, 180);
 
 .weather-forecast-temperatures {
   font-size: 13px;
+}
+
+#update {
+  font-size: 25px;
+  font-style: italic;
+}
+
+#calendar {
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
 }
 
 

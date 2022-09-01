@@ -98,6 +98,7 @@ function showTemperature(response) {
   
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
+  let countryElement = document.querySelector("#country");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -110,6 +111,7 @@ function showTemperature(response) {
 
   temperatureElement.innerHTML = Math.round(celciusTemperature);
   cityElement.innerHTML = response.data.name;
+  countryElement.innerHTML = response.data.sys.country;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -164,6 +166,31 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
+
+
+function getPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "4625c4e0a5b77db6d4e95771e68e2bb6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+
+
+  console.log(apiUrl);
+}
+
+function initPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(getPosition);
+}
+
+function initCurrentCityListeners() {
+  let currentCity = document.querySelector("#current-city-btn");
+  currentCity.addEventListener("click", initPosition);
+}
+
+initCurrentCityListeners();
+
 
 search("Kyiv");
 

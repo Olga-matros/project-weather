@@ -29,17 +29,26 @@
                   <div class="col-7">
                       <form id="search-form">
                           <div class="mb-3">
-                            <input type="search" class="form-control" id="city-input" placeholder="Enter a city here" autofocus="on" autocomplete="off">
+                            <input type="search" class="form-control" id="city-input" placeholder="Enter a city here" autofocus="on"
+                             autocomplete="off">
                           </div>
                           <button type="submit" class="btn btn-primary search-button w-40" value="Search" id="search-button">Submit</button>
                           
-                          <button type="submit" class="btn btn-primary search-button w-30 currentCityBtn" id="current-city-btn">  <i class="fa-solid fa-map-location-dot"></i></button>
+                          <button type="submit" class="btn btn-primary search-button w-30 currentCityBtn" id="current-city-btn">
+                          <i class="fa-solid fa-map-location-dot"></i></button>
                       </form>
                   </div>
                   
                   <div class="col current-weather-text">
-                      <div>           
-                      <span class="units" id="temperature"></span><a href="#" id="celcius-link" class="active">°C</a>|<a href="#" id="fahrenheit-link">°F</a>  
+
+
+                      <div class="row"> 
+                        <div class="column">        
+                      <span class="units" id="temperature"></span></div>  
+                      <div class="column">
+                        <a href="#" id="celcius-link" class="active">°C</a>
+                        <a href="#" id="fahrenheit-link">°F</a>  
+                      </div>
                       </div>
                       <div>
                       Humidity: <span id="humidity"></span>%
@@ -56,7 +65,8 @@
                       <h1 id="city"></h1>
                       <p id="country"></p>
                       <div><span id="update">Last updated: </span><span id="date"></span></div>
-                      <div class="clearfix weather-temperature"> <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="clear" id="icon"></span>
+                      <div class="clearfix weather-temperature"> <img src="http://openweathermap.org/img/wn/10d@2x.png"
+                      alt="clear" id="icon"></span>
                        
                        </div>
                         <h2 id="description"></h2>

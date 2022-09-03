@@ -157,14 +157,21 @@ color: rgba(13, 143, 24, 0.712);
 }
 
 .active {
+  color: #df630abc;
   text-decoration: none;
-  color:  rgb(93, 93, 180);
-cursor: default;
+  font-size: 45px;
+  font-weight: 600;
+  /* color:  rgb(93, 93, 180); */
+  cursor: default;
 }
 
 .active:hover {
-text-decoration: none;
-color:  rgb(93, 93, 180);
+  text-decoration: none;
+  color:  #df630abc;
+}
+
+a {
+  text-decoration: none;
 }
 
 .weather-forecast {

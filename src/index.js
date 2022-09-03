@@ -120,7 +120,8 @@ function showTemperature(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
   iconElement.setAttribute("alt", response.data.weather[0].description); 
-  
+
+  setActiveLinkFor(celciusUOM);
 
   getForecast(response.data.coord);
 }
@@ -139,19 +140,33 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
+let celciusUOM = `celcius`;
+let fahrenheitUOM = `fahrenheit`;
+
+function setActiveLinkFor(temperatureUOM) {
+  if (temperatureUOM == celciusUOM) {
+    celciusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+
+  } else if (temperatureUOM == fahrenheitUOM) {
+      celciusLink.classList.remove("active");
+      fahrenheitLink.classList.add("active");
+  } else {
+    console.log("Not suppported unit of measurement.")
+  }
+}
+
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
+  setActiveLinkFor(fahrenheitUOM);
   let fahrenheitTemperature = (celciusTemperature * 9 / 5) + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function displayCelciusTemperature(event)  {
   event.preventDefault();
-  celciusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
+  setActiveLinkFor(celciusUOM);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celciusTemperature);
 }

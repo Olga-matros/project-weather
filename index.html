@@ -25,7 +25,7 @@
   </head>
 
   <body>
-                <div class="row">
+                 <div class="row">
                   <div class="col-7">
                       <form id="search-form">
                           <div class="mb-3">
@@ -65,7 +65,7 @@
                       <h1 id="city"></h1>
                       <p id="country"></p>
                       <div><span id="update">Last updated: </span><span id="date"></span></div>
-                      <div class="clearfix weather-temperature"> <img src="http://openweathermap.org/img/wn/10d@2x.png"
+                      <div class="clearfix weather-temperature"> <img class="picture"  src="http://openweathermap.org/img/wn/10d@2x.png"
                       alt="clear" id="icon"></span>
                        
                        </div>
@@ -85,13 +85,11 @@
       <div class="container text-center">
         <div class="row">
           <div class="col">
-
               <div class="float-left">
             <h3>Sunrise <span class="temperature"></span>
             </div>
             <div class="col">
-                
-                <p class="sun" id="sunrise"></p>
+              <p class="sun" id="sunrise"></p>
                
               </div></h3>
 
@@ -120,7 +118,7 @@
     <br /><br />
 
 
-     <h3>WEEK FORECAST</h3>
+     <h3 class="week" >WEEK FORECAST</h3>
       <hr />
       <div>
       <div class="Week-forecast" id="Forecast4you"></div>
@@ -133,19 +131,26 @@
           <div class="weather-forecast-date">Mon</div>
           <img src="http://openweathermap.org/img/wn/10d@2x.png"
           alt=""
-          width="60"
+          width="300"
           />
           <div class="weather-forecast-temperatures">
-          <span class="badge text-bg-danger weather-forecast-temperature max">+18°C</span>  
-          <span class="badge text-bg-primary weather-forecast-temperature min">+12°C</span>
+          <span class="badge text-bg-danger weather-forecast-temperature max">+18°C
+
+          </span>  
+          <span class="badge text-bg-primary weather-forecast-temperature min">+12°C
+
+          </span>
         </div>
       </div>
     </div>
   </div>
       
       <div class="ending">
-        <a href="https://github.com/Olga-matros/project-weather">Open-source code</a>, by Olha Novytska
-      <div>Hosted with <a href="https://clever-biscotti-d843c4.netlify.app">Netlify</a></div>
+        <a href="https://github.com/Olga-matros/project-weather">Open-source code</a>,
+         by Olha Novytska
+      <div>Hosted with <a href="https://clever-biscotti-d843c4.netlify.app">Netlify
+        
+      </a></div>
       </div>
     </div>
     <script src="src/index.js"></script>

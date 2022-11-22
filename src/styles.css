@@ -30,12 +30,12 @@ in.label {
 } */
 
 h1 {
-  font-size: 40px;
+  font-size: 100px;
   font-family: 'Fresca', sans-serif;
   text-align: center;
   color: rgb(93, 93, 180);
-  font-weight: bolder;
-  color: #df630abc;
+  font-weight: bold;
+  color: #dc3545;
 }
 
 h2 {
@@ -44,11 +44,14 @@ h2 {
   color: rgb(93, 93, 180);
   font-weight: bolder;
 }
+
 h2:first-letter {
   text-transform: capitalize;
 }
-h3 {
+
+.week {
   font-weight: bold;
+  font-size: 40px;
 }
 
 form {
@@ -62,6 +65,11 @@ form {
   width: 100%;
   display: block;
   margin: 20px;
+}
+
+.picture {
+  width: 300px;
+  margin: auto;
 }
 
 .current-weather-text {
@@ -79,7 +87,6 @@ form {
   border-radius: 30px;
   }
   
-
 .card-img-top {
   margin-bottom: 20px;
   width: 55px;
@@ -91,6 +98,7 @@ height: 55px;
   height: auto;
   margin-top: 20px;
 }
+
 #night {
   width: 180px;
   height: auto;
@@ -128,28 +136,27 @@ p1, p2 {
   color: rgb(93, 93, 180);
 }
 
-
 .sun {
-  color: #df630abc;
+  color: #dc3545;
   font-size: 40px;
-  
 }
 
 #temperature {
-  color: #df630abc;
+  color: #dc3545;
   font-size: 60px;
   font-weight: bold;
 }
 
 h3, h4 {
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 20px;
   margin-top: 20px;
   font-weight: bold;
 }
 
 body {
-  background-color: #cee3d1;
+background: rgb(255,240,62);
+background: linear-gradient(31deg, rgba(255,240,62,1) 0%, rgba(201,252,193,1) 71%);
 }
 
 input[type="date"] { 
@@ -159,7 +166,7 @@ color: rgba(13, 143, 24, 0.712);
 }
 
 .active {
-  color: #df630abc;
+  color: #dc3545;
   text-decoration: none;
   font-size: 45px;
   font-weight: 600;
@@ -169,7 +176,7 @@ color: rgba(13, 143, 24, 0.712);
 
 .active:hover {
   text-decoration: none;
-  color:  #df630abc;
+  color:  #dc3545;
 }
 
 a {
@@ -182,11 +189,11 @@ a {
 }
 
 .weather-forecast-date {
-  font-size: 16px;
+  font-size: 40px;
 }
 
 .weather-forecast-temperatures {
-  font-size: 13px;
+  font-size: 40px;
 }
 
 #update {
@@ -198,6 +205,23 @@ a {
   font-size: 25px;
   font-weight: bold;
   font-style: italic;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.weather-forecast {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.body {
+  width: 1920px;
+  height: 1080px;
 }
 
 
